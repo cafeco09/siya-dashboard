@@ -10,7 +10,7 @@ A public dashboard by Anshul Dixit, connecting girls’ education with women’s
 
 The static dashboard, its public source data, charts, definitions and calculation notes. The self-contained index.html embeds the public datasets in gzip form and restores downloadable JSON/CSV files in the browser; it uses the browser’s DecompressionStream API. GitHub Pages serves this repository’s main branch at the root. No build or provider key is required.
 
-The live SIYA engine and outreach approval, sending and tracking service run separately. This repository contains no authority recipient directory, private email records, credentials or backend implementation. The Agent Outreach chapter links to the live workspace.
+The live SIYA engine and outreach approval, sending and tracking service run separately. This repository contains no authority recipient directory, private email records, credentials or backend implementation. SIYA and public outreach render directly inside the GitHub dashboard, using isolated anonymous sessions to call the private runtime in the background. Admin approval and sending remain in the private admin workspace.
 
 ## Measures
 
