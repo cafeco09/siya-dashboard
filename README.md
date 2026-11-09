@@ -10,7 +10,7 @@ A public dashboard by Anshul Dixit, connecting girls’ education with women’s
 
 The static dashboard, its public source data, charts, definitions and calculation notes. The self-contained index.html embeds the public datasets in gzip form and restores downloadable JSON/CSV files in the browser; it uses the browser’s DecompressionStream API. GitHub Pages serves this repository’s main branch at the root. No build or provider key is required.
 
-The live SIYA engine and outreach approval, sending and tracking service run separately. This repository contains no authority recipient directory, private email records, credentials or backend implementation. SIYA and public outreach render directly inside the GitHub dashboard, using isolated anonymous sessions to call the private runtime in the background. Admin approval and sending remain in the private admin workspace.
+The live SIYA engine and outreach approval, sending and tracking service run separately. This repository contains no private email records, credentials or Frontier model implementation. The `project/` directory publishes the Node.js backend, UI and integration code; recipient email fields are blank and the Frontier dependency remains private. SIYA and public outreach render directly inside the GitHub dashboard, using isolated anonymous sessions to call the private runtime in the background. Admin approval and sending remain in the private admin workspace.
 
 ## Measures
 
@@ -25,3 +25,7 @@ Source URLs and qualifications are retained in the downloadable datasets and the
 ## Local preview
 
 Run `python3 -m http.server 8000` in this directory and open http://localhost:8000/.
+
+## Project source
+
+The [project source](project/) contains the application code except the private Frontier model, its architecture documents and model evaluation records. No private source history is imported. See [project/README.md](project/README.md) for dependencies and limitations. The root dashboard remains unchanged.

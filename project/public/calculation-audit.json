@@ -1,0 +1,512 @@
+{
+  "checkedOn": "2026-11-02",
+  "sourceURL": "https://api.worldbank.org/v2/country/MAR/indicator/SP.POP.TOTL;NY.GDP.MKTP.CD;NY.GDP.PCAP.CD?format=json&date=2018:2025&source=2&footnote=y&per_page=100",
+  "sourceLastUpdated": "2026-10-08",
+  "scope": "Morocco reconciliation: World Bank GDP per capita country-series note states Data cover Western Sahara; the population series cites UN World Population Prospects. Published values preserved; a matching denominator has not been verified.",
+  "sourceRecords": [
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2025",
+      "value": 38430770,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2024",
+      "value": 38081173,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2023",
+      "value": 37712505,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2022",
+      "value": 37329064,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2021",
+      "value": 36954442,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2020",
+      "value": 36584208,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2019",
+      "value": 36210898,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2018",
+      "value": 35839760,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.CD",
+        "value": "GDP (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2025",
+      "value": 182374250612.28,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.CD",
+        "value": "GDP (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2024",
+      "value": 160610994054.734,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.CD",
+        "value": "GDP (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2023",
+      "value": 146036093666.762,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.CD",
+        "value": "GDP (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2022",
+      "value": 131245312804.483,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.CD",
+        "value": "GDP (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2021",
+      "value": 142022058447.231,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.CD",
+        "value": "GDP (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2020",
+      "value": 121353645057.144,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.CD",
+        "value": "GDP (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2019",
+      "value": 128920266409.458,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.CD",
+        "value": "GDP (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2018",
+      "value": 127341147581.818,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2025",
+      "value": 4672.46826171875,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2024",
+      "value": 4153.1943359375,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2023",
+      "value": 3813.72607421875,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2022",
+      "value": 3463.1376953125,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2021",
+      "value": 3785.93627929688,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2020",
+      "value": 3268.0302734375,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2019",
+      "value": 3508.09765625,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1,
+      "footnote": ""
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "MA",
+        "value": "Morocco"
+      },
+      "countryiso3code": "MAR",
+      "date": "2018",
+      "value": 3501.69799804688,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1,
+      "footnote": ""
+    }
+  ],
+  "metadataChecks": [
+    {
+      "indicator": "SP.POP.TOTL",
+      "url": "https://api.worldbank.org/v2/sources/2/country/MAR/series/SP.POP.TOTL/metadata?format=json",
+      "countrySeriesNotes": [
+        {
+          "id": "Country-Series",
+          "value": "Data source: United Nations World Population Prospects"
+        }
+      ],
+      "retrieved": true
+    },
+    {
+      "indicator": "NY.GDP.MKTP.CD",
+      "url": "https://api.worldbank.org/v2/sources/2/country/MAR/series/NY.GDP.MKTP.CD/metadata?format=json",
+      "countrySeriesNotes": [],
+      "retrieved": true
+    },
+    {
+      "indicator": "NY.GDP.PCAP.CD",
+      "url": "https://api.worldbank.org/v2/sources/2/country/MAR/series/NY.GDP.PCAP.CD/metadata?format=json",
+      "countrySeriesNotes": [
+        {
+          "id": "Country-Series",
+          "value": "Data cover Western Sahara."
+        }
+      ],
+      "retrieved": true
+    }
+  ],
+  "reconciliation": [
+    {
+      "year": 2018,
+      "reportedGDPPerCapita": 3501.69799804688,
+      "populationSeriesValue": 35839760,
+      "gdpDividedByPopulation": 3553.0692053132607,
+      "populationImpliedByGDPPerCapita": 36365542.560450464,
+      "status": "Geographic qualification identified; matching denominator not verified; diagnostic only"
+    },
+    {
+      "year": 2019,
+      "reportedGDPPerCapita": 3508.09765625,
+      "populationSeriesValue": 36210898,
+      "gdpDividedByPopulation": 3560.261510483888,
+      "populationImpliedByGDPPerCapita": 36749337.97232658,
+      "status": "Geographic qualification identified; matching denominator not verified; diagnostic only"
+    },
+    {
+      "year": 2020,
+      "reportedGDPPerCapita": 3268.0302734375,
+      "populationSeriesValue": 36584208,
+      "gdpDividedByPopulation": 3317.104611288674,
+      "populationImpliedByGDPPerCapita": 37133574.32564336,
+      "status": "Geographic qualification identified; matching denominator not verified; diagnostic only"
+    },
+    {
+      "year": 2021,
+      "reportedGDPPerCapita": 3785.93627929688,
+      "populationSeriesValue": 36954442,
+      "gdpDividedByPopulation": 3843.166092109603,
+      "populationImpliedByGDPPerCapita": 37513060.9629825,
+      "status": "Geographic qualification identified; matching denominator not verified; diagnostic only"
+    },
+    {
+      "year": 2022,
+      "reportedGDPPerCapita": 3463.1376953125,
+      "populationSeriesValue": 37329064,
+      "gdpDividedByPopulation": 3515.9015185723115,
+      "populationImpliedByGDPPerCapita": 37897803.769722745,
+      "status": "Geographic qualification identified; matching denominator not verified; diagnostic only"
+    },
+    {
+      "year": 2023,
+      "reportedGDPPerCapita": 3813.72607421875,
+      "populationSeriesValue": 37712505,
+      "gdpDividedByPopulation": 3872.351986874433,
+      "populationImpliedByGDPPerCapita": 38292234.634779796,
+      "status": "Geographic qualification identified; matching denominator not verified; diagnostic only"
+    },
+    {
+      "year": 2024,
+      "reportedGDPPerCapita": 4153.1943359375,
+      "populationSeriesValue": 38081173,
+      "gdpDividedByPopulation": 4217.59576719798,
+      "populationImpliedByGDPPerCapita": 38671678.005763076,
+      "status": "Geographic qualification identified; matching denominator not verified; diagnostic only"
+    },
+    {
+      "year": 2025,
+      "reportedGDPPerCapita": 4672.46826171875,
+      "populationSeriesValue": 38430770,
+      "gdpDividedByPopulation": 4745.526842482729,
+      "populationImpliedByGDPPerCapita": 39031672.425998315,
+      "status": "Geographic qualification identified; matching denominator not verified; diagnostic only"
+    }
+  ]
+}

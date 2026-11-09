@@ -1,0 +1,157 @@
+{
+  "sourceUrl": "https://api.worldbank.org/v2/country/WLD/indicator/SP.POP.TOTL.FE.IN?source=2&date=2018:2025&format=json&per_page=100",
+  "indicator": "SP.POP.TOTL.FE.IN",
+  "source": "World Bank, World Development Indicators",
+  "lastUpdated": "2026-10-08",
+  "retrievedAt": "2026-11-02",
+  "observations": {
+    "2025": 4085748274,
+    "2024": 4047858202,
+    "2023": 4008126120,
+    "2022": 3970177260,
+    "2021": 3935187241,
+    "2020": 3901339008,
+    "2019": 3862597121,
+    "2018": 3821941687
+  },
+  "sourceResponse": [
+    {
+      "page": 1,
+      "pages": 1,
+      "per_page": 100,
+      "total": 8,
+      "sourceid": "2",
+      "lastupdated": "2026-10-08"
+    },
+    [
+      {
+        "indicator": {
+          "id": "SP.POP.TOTL.FE.IN",
+          "value": "Population, female"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2025",
+        "value": 4085748274,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.TOTL.FE.IN",
+          "value": "Population, female"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2024",
+        "value": 4047858202,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.TOTL.FE.IN",
+          "value": "Population, female"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2023",
+        "value": 4008126120,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.TOTL.FE.IN",
+          "value": "Population, female"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2022",
+        "value": 3970177260,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.TOTL.FE.IN",
+          "value": "Population, female"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2021",
+        "value": 3935187241,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.TOTL.FE.IN",
+          "value": "Population, female"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2020",
+        "value": 3901339008,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.TOTL.FE.IN",
+          "value": "Population, female"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2019",
+        "value": 3862597121,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      },
+      {
+        "indicator": {
+          "id": "SP.POP.TOTL.FE.IN",
+          "value": "Population, female"
+        },
+        "country": {
+          "id": "1W",
+          "value": "World"
+        },
+        "countryiso3code": "WLD",
+        "date": "2018",
+        "value": 3821941687,
+        "unit": "",
+        "obs_status": "",
+        "decimal": 0
+      }
+    ]
+  ]
+}
