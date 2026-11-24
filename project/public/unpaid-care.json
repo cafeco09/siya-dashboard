@@ -1,0 +1,515 @@
+{
+  "retrieved": "2026-11-24",
+  "locations": [
+    {
+      "iso": "PAK",
+      "child": null,
+      "timeUse": {
+        "female": 19.86111,
+        "male": 1.80556,
+        "period": "2007",
+        "age": "10+",
+        "survey": "Pakistan Bureau of Statistics based on Time Use Survey",
+        "geography": "Pakistan",
+        "notes": "Collecting water and fuel included under unpaid work",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=586"
+      },
+      "local": [
+        {
+          "female": 6.2,
+          "male": 5.1,
+          "period": "2022–2024",
+          "age": "5–9",
+          "survey": "Sindh Child Labour Survey, Figure 6",
+          "geography": "Sindh province",
+          "measure": "Average weekly household chores (hours)",
+          "notes": "",
+          "source": "https://dglabour.gos.pk/wp-content/uploads/2025/07/SCLS_KFR_02.07.2025.pdf#page=12"
+        },
+        {
+          "female": 9.8,
+          "male": 6.4,
+          "period": "2022–2024",
+          "age": "10–13",
+          "survey": "Sindh Child Labour Survey, Figure 6",
+          "geography": "Sindh province",
+          "measure": "Average weekly household chores (hours)",
+          "notes": "",
+          "source": "https://dglabour.gos.pk/wp-content/uploads/2025/07/SCLS_KFR_02.07.2025.pdf#page=12"
+        },
+        {
+          "female": 13.9,
+          "male": 7.6,
+          "period": "2022–2024",
+          "age": "14–17",
+          "survey": "Sindh Child Labour Survey, Figure 6",
+          "geography": "Sindh province",
+          "measure": "Average weekly household chores (hours)",
+          "notes": "",
+          "source": "https://dglabour.gos.pk/wp-content/uploads/2025/07/SCLS_KFR_02.07.2025.pdf#page=12"
+        }
+      ]
+    },
+    {
+      "iso": "THA",
+      "child": null,
+      "timeUse": {
+        "female": 11.04167,
+        "male": 3.25,
+        "period": "2015",
+        "age": "6+",
+        "survey": "Calculated by UNSD based on available country data from the Time Use Survey to apply ICATUS.",
+        "geography": "Thailand",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=764"
+      },
+      "local": []
+    },
+    {
+      "iso": "NPL",
+      "child": {
+        "female": 17.4,
+        "male": 7.4,
+        "period": "2014",
+        "survey": "MICS 2014",
+        "geography": "Nepal",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/NPL.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": null,
+      "local": []
+    },
+    {
+      "iso": "BGD",
+      "child": {
+        "female": 3.9,
+        "male": 0.3,
+        "period": "2019",
+        "survey": "MICS 2019",
+        "geography": "Bangladesh",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/BGD.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": null,
+      "local": []
+    },
+    {
+      "iso": "MNG",
+      "child": {
+        "female": 10.8,
+        "male": 13.5,
+        "period": "2023",
+        "survey": "MICS 2023",
+        "geography": "Mongolia",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/MNG.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": {
+        "female": 19.05801,
+        "male": 9.19318,
+        "period": "2023",
+        "age": "15+",
+        "survey": "National Statistical Office based on Time use survey 2023",
+        "geography": "Mongolia",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=496"
+      },
+      "local": []
+    },
+    {
+      "iso": "PSE",
+      "child": {
+        "female": 2.2,
+        "male": 0.8,
+        "period": "2019–20",
+        "survey": "MICS 2019-20",
+        "geography": "State of Palestine",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/PSE.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": {
+        "female": 20.13889,
+        "male": 2.98611,
+        "period": "2013",
+        "age": "15+",
+        "survey": "Palestinian Central Bureau of Statistics (PCBS) based on Time Use Survey 2012/2013",
+        "geography": "State of Palestine",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=275"
+      },
+      "local": []
+    },
+    {
+      "iso": "VNM",
+      "child": {
+        "female": 3.8,
+        "male": 2.9,
+        "period": "2020–21",
+        "survey": "MICS 2020-21",
+        "geography": "Viet Nam",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/VNM.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": null,
+      "local": []
+    },
+    {
+      "iso": "IRN",
+      "child": null,
+      "timeUse": {
+        "female": 22.5,
+        "male": 4.51389,
+        "period": "2020",
+        "age": "15+",
+        "survey": "Time-use survey, during the autumn and winter of the Iranian year 1398 and spring and summer of the Iranian year 1399",
+        "geography": "Urban Iran",
+        "notes": "Urban areas only.",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=364"
+      },
+      "local": []
+    },
+    {
+      "iso": "AFG",
+      "child": {
+        "female": 21.0,
+        "male": 11.5,
+        "period": "2022–23",
+        "survey": "MICS 2022-23, UNICEF and ILO calculations",
+        "geography": "Afghanistan",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/AFG.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": null,
+      "local": []
+    },
+    {
+      "iso": "ISR",
+      "child": null,
+      "timeUse": null,
+      "local": [
+        {
+          "female": 4.5,
+          "male": 1.5,
+          "period": "Published 2025",
+          "age": "Unspecified",
+          "survey": "Knesset Research and Information Center, English abstract",
+          "geography": "Israel",
+          "measure": "Approximate household tasks and childcare (hours/day)",
+          "notes": "The abstract does not specify the survey period, age range or sampling coverage.",
+          "source": "https://main.knesset.gov.il/EN/activity/mmm/The%20Monetary%20Value%20of%20Unpaid%20Household%20Work%20and%20Related%20Policy%20Tools%20%28Abstract%29.pdf"
+        }
+      ]
+    },
+    {
+      "iso": "IND",
+      "child": null,
+      "timeUse": {
+        "female": 22.36111,
+        "male": 2.91667,
+        "period": "2024",
+        "age": "15+",
+        "survey": "Time Use Survey by National Statistical Office",
+        "geography": "India",
+        "notes": "estimates have been calculated considering all the activities in a time slot",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=356"
+      },
+      "local": [
+        {
+          "female": 2.08333,
+          "male": 0.76389,
+          "period": "2019",
+          "age": "6–14",
+          "survey": "Time Use Survey by National Statistical Office",
+          "geography": "India",
+          "notes": "estimates have been calculated considering all the activities in a time slot",
+          "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=356",
+          "measure": "Unpaid domestic and care work (% of a day)"
+        }
+      ]
+    },
+    {
+      "iso": "GBR",
+      "child": null,
+      "timeUse": {
+        "female": 15.83333,
+        "male": 12.29167,
+        "period": "2026",
+        "age": "15+",
+        "survey": "Online Time Use Survey by Office for National Statistics",
+        "geography": "United Kingdom of Great Britain and Northern Ireland",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=826"
+      },
+      "local": []
+    },
+    {
+      "iso": "CAN",
+      "child": null,
+      "timeUse": {
+        "female": 16.45833,
+        "male": 11.625,
+        "period": "2023",
+        "age": "15+",
+        "survey": "Time Use Survey by Statistics Canada",
+        "geography": "Canada",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=124"
+      },
+      "local": []
+    },
+    {
+      "iso": "USA",
+      "child": null,
+      "timeUse": {
+        "female": 15.41667,
+        "male": 10.08333,
+        "period": "2023",
+        "age": "15+",
+        "survey": "American Time Use Survey (ATUS)",
+        "geography": "United States of America",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=840"
+      },
+      "local": []
+    },
+    {
+      "iso": "AUS",
+      "child": null,
+      "timeUse": {
+        "female": 17.91667,
+        "male": 12.63889,
+        "period": "2024",
+        "age": "15+",
+        "survey": "Australian Bureau of Statistics based on 2024 Time Use Survey",
+        "geography": "Australia",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=36"
+      },
+      "local": []
+    },
+    {
+      "iso": "NZL",
+      "child": null,
+      "timeUse": {
+        "female": 18.05556,
+        "male": 10.55556,
+        "period": "2010",
+        "age": "12+",
+        "survey": "Calculated by UNSD based on available country data from the Time Use Survey to apply ICATUS.",
+        "geography": "New Zealand",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=554"
+      },
+      "local": []
+    },
+    {
+      "iso": "JPN",
+      "child": null,
+      "timeUse": {
+        "female": 14.70833,
+        "male": 3.75,
+        "period": "2021",
+        "age": "15+",
+        "survey": "Survey on Time Use and Leisure Activities by Statistics Bureau of Japan",
+        "geography": "Japan",
+        "notes": "Includes production activities of goods for own final use.",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=392"
+      },
+      "local": []
+    },
+    {
+      "iso": "CHN",
+      "child": null,
+      "timeUse": {
+        "female": 15.34722,
+        "male": 5.90278,
+        "period": "2018",
+        "age": "15+",
+        "survey": "Calculated by UNSD based on available country data from the 2018 National Time Use Survey to apply ICATUS.",
+        "geography": "China",
+        "notes": "Travel related to unpaid domestic and care work is not included.",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=156"
+      },
+      "local": []
+    },
+    {
+      "iso": "KEN",
+      "child": null,
+      "timeUse": {
+        "female": 18.69542,
+        "male": 3.61125,
+        "period": "2021",
+        "age": "15+",
+        "survey": "2021 Kenya Time Use Survey by Kenya National Bureau of Statistics",
+        "geography": "Kenya",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=404"
+      },
+      "local": []
+    },
+    {
+      "iso": "EGY",
+      "child": {
+        "female": 3.1,
+        "male": 2.1,
+        "period": "2021",
+        "survey": "EFHS 2021, UNICEF and ILO calculations",
+        "geography": "Egypt",
+        "notes": "North Sinai was excluded from the survey due to the special circumstances of the governorate. Denominator is a never-married randomly selected child. Firewood collection and associated working hours are combined with water fetching. Also cooking is combined with washing dishes or cleaning around the house under household chores.",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/EGY.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": {
+        "female": 22.36111,
+        "male": 2.43056,
+        "period": "2015",
+        "age": "10+",
+        "survey": "Calculated by UNSD based on available country data from the Time use survey in Egypt  to apply ICATUS.",
+        "geography": "Egypt",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=818"
+      },
+      "local": []
+    },
+    {
+      "iso": "MAR",
+      "child": null,
+      "timeUse": {
+        "female": 20.83297,
+        "male": 3.01521,
+        "period": "2012",
+        "age": "15+",
+        "survey": "2011-2012 National Survey on time use in Morocco by Haut-Commissariat au Plan",
+        "geography": "Morocco",
+        "notes": "For household members only",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=504"
+      },
+      "local": []
+    },
+    {
+      "iso": "NGA",
+      "child": {
+        "female": 19.2,
+        "male": 17.2,
+        "period": "2021",
+        "survey": "MICS 2021",
+        "geography": "Nigeria",
+        "notes": "Due to prolonged insecurity concerns, some parts of states, including Borno state, were not sampled",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/NGA.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": null,
+      "local": []
+    },
+    {
+      "iso": "SDN",
+      "child": {
+        "female": 7.5,
+        "male": 4.4,
+        "period": "2014",
+        "survey": "MICS 2014",
+        "geography": "Sudan",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/SDN.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": null,
+      "local": []
+    },
+    {
+      "iso": "ZAF",
+      "child": {
+        "female": 1.8,
+        "male": 1.4,
+        "period": "2015",
+        "survey": "Survey of Activities of Young People 2015",
+        "geography": "South Africa",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/ZAF.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": {
+        "female": 15.55556,
+        "male": 6.45833,
+        "period": "2010",
+        "age": "10+",
+        "survey": "Calculated by UNSD based on available country data from the Time Use Survey 2010 to apply ICATUS.",
+        "geography": "South Africa",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=710"
+      },
+      "local": []
+    },
+    {
+      "iso": "ETH",
+      "child": {
+        "female": 20.9,
+        "male": 13.8,
+        "period": "2015",
+        "survey": "NCLS 2015",
+        "geography": "Ethiopia",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/ETH.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": {
+        "female": 19.30556,
+        "male": 6.59722,
+        "period": "2013",
+        "age": "10+",
+        "survey": "Calculated by UNSD based on available country data from the Ethiopian Time Use Survey to apply ICATUS.",
+        "geography": "Ethiopia",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=231"
+      },
+      "local": []
+    },
+    {
+      "iso": "GHA",
+      "child": {
+        "female": 18.5,
+        "male": 12.8,
+        "period": "2017–18",
+        "survey": "MICS 2017-18",
+        "geography": "Ghana",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/GHA.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": {
+        "female": 15.48611,
+        "male": 4.58333,
+        "period": "2009",
+        "age": "18+",
+        "survey": "Calculated by UNSD based on available country data from the Ghana Time Use Survey to apply ICATUS.",
+        "geography": "Ghana",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=288"
+      },
+      "local": []
+    },
+    {
+      "iso": "RWA",
+      "child": {
+        "female": 0.3,
+        "male": 0.2,
+        "period": "2020",
+        "survey": "LFS 2020",
+        "geography": "Rwanda",
+        "notes": "",
+        "source": "https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,GLOBAL_DATAFLOW,1.0/RWA.PT_ADLS_10-14_LBR_HC?format=csv&labels=both"
+      },
+      "timeUse": null,
+      "local": []
+    },
+    {
+      "iso": "KOR",
+      "child": null,
+      "timeUse": {
+        "female": 13.05556,
+        "male": 4.72222,
+        "period": "2024",
+        "age": "15+",
+        "survey": "2024 Time use survey",
+        "geography": "Republic of Korea",
+        "notes": "",
+        "source": "https://unstats.un.org/sdgapi/v1/sdg/Series/Data?seriesCode=SL_DOM_TSPD&areaCode=410"
+      },
+      "local": []
+    }
+  ]
+}
