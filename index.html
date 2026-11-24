@@ -561,7 +561,7 @@ async function submitAgentQuestion(prompt,{reply=false}={}){
 function agentNextQuestions(){
  const c=agentState.conversation,turn=c?.turns?.at(-1);if(!turn?.result)return [];
  const result=turn.result,f=result.frontier||{},frames=f.interpretation?.frames||[];
- if(result.publicDisplay)return result.suggestedReplies||[];
+ if(result.publicDisplay||Array.isArray(result.suggestedReplies))return result.suggestedReplies||[];
  if(result.kind==='clarification'&&f.clarification?.options?.length)return [];
  const blockedTask=(f.plan||[]).find(p=>['EVIDENCE_MISSING','VALUE_MISSING','POPULATION_MISMATCH','CAUSAL_EVIDENCE_MISSING','COMPARISON_REFERENCE_MISSING','SCOPE_UNRESOLVED','ACTION_NOT_AUTHORISED'].includes(p.status));
  const query=(blockedTask?frames.find(q=>q.task_id===blockedTask.task_id):null)||frames.find(q=>q.topic)||f.memory?.query||{};
@@ -605,7 +605,7 @@ function agentNextQuestions(){
 function agentNextQuestionsHtml(){
  const suggestions=agentNextQuestions();if(!suggestions.length)return '';
  const rewrite=suggestions.some(s=>s.rewrite),fresh=suggestions.some(s=>s.newConversation);
- return `<div class="agent-next-questions" aria-label="Suggested next question"><h4>${rewrite?'Would you like to ask this instead?':'Suggested next question'}</h4>${fresh?'<p class="subtle">'+(suggestions[0].mode==='frontier'?'Opens a new evidence conversation.':'Opens a new mechanism lab conversation.')+'</p>':''}<div class="agent-suggestions">${suggestions.map((s,i)=>`<button type="button" data-agent-followup="${i}" ${agentState.busy?'disabled':''}>${esc(s.label||s.prompt)}</button>`).join('')}</div><p class="subtle">Click to edit, then choose Run prompt.${suggestions.some(s=>s.prompt.includes('[country name]'))?' Replace [country name] with your chosen country.':''}</p></div>`;
+ return `<div class="agent-next-questions" aria-label="Suggested next question"><h4>${rewrite?'Would you like to ask this instead?':suggestions.length>1?'Suggested follow-up questions':'Suggested next question'}</h4>${fresh?'<p class="subtle">'+(suggestions[0].mode==='frontier'?'Opens a new evidence conversation.':'Opens a new mechanism lab conversation.')+'</p>':''}<div class="agent-suggestions">${suggestions.map((s,i)=>`<button type="button" data-agent-followup="${i}" ${agentState.busy?'disabled':''}>${esc(s.label||s.prompt)}</button>`).join('')}</div><p class="subtle">Click to edit, then choose Run prompt.${suggestions.some(s=>s.prompt.includes('[country name]'))?' Replace [country name] with your chosen country.':''}</p></div>`;
 }
 function agentAskView(){
  const s=agentState,c=s.connection,task=s.task,unlocked=agentCanAsk(),scopeChanged=agentScopeChanged(),lab=s.mode==='frontier-e0';

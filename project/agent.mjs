@@ -86,7 +86,8 @@ export function createAgentService({dataPath,env=process.env,now=()=>Date.now(),
   const controller=new AbortController();t.controller=controller;
   try{
    t.status='running';t.progress='Processing evidence with SIYA / Frontier V4';t.updatedAt=now();
-   t.dialogue=await frontierDialogue(snapshot,prompt,conversation,{signal:controller.signal,timeoutMs:Math.min(timeoutMs,10000),regime:t.mode==='frontier-e0'?'examples_only':'evidence'});
+   const c2Comparison=snapshot?.countries?.length===2&&env.SIYA_C2_COMPARISON!=='0';
+   t.dialogue=await frontierDialogue(c2Comparison?{...snapshot,c2Comparison:true}:snapshot,prompt,conversation,{signal:controller.signal,timeoutMs:Math.min(timeoutMs,10000),regime:t.mode==='frontier-e0'?'examples_only':'evidence'});
    if(t.scopePending!==undefined&&t.dialogue.kind==='clarification'&&t.dialogue.frontier?.v4?.operator==='guarded_dashboard_adapter')t.dialogue.scopePending=t.scopePending;
    if(controller.signal.aborted)throw new DOMException('Aborted','AbortError');
    t.conversation=dialogues.append(conversation.id,displayPrompt,t.dialogue);conversationOwners.set(conversation.id,{session:t.session,updatedAt:now()});t.output=t.dialogue.message;
@@ -151,9 +152,8 @@ export function createAgentService({dataPath,env=process.env,now=()=>Date.now(),
   dialogues.forget(id);conversationOwners.delete(id);for(const [taskId,t]of tasks)if(t.conversationId===id)tasks.delete(taskId);return {forgotten:true};
  }
  async function present(task,{admin=false}={}){
-  if(admin)return presentTask(task,{admin:true});
   const data=dataPromise?await dataPromise:null;
-  return presentTask(task,{catalog:data?.Coverage?.slice(1)||[]});
+  return presentTask(task,{admin,catalog:data?.Coverage?.slice(1)||[]});
  }
  return {status,cookieFor,authenticated,start,get,cancel,close,evidence,forgetConversation,present};
 }

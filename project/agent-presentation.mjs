@@ -24,11 +24,20 @@ function publicDialogue(result,conversation,catalog){
 }
 
 export function presentTask(task,{admin=false,catalog=[]}={}){
- if(admin)return clone(task);
+ const latest=task.conversation?.turns?.at(-1);
+ if(admin){
+  const view=clone(task);
+  if(view.dialogue&&latest){
+   const suggestions=dialogueSuggestions(task.conversation,catalog);
+   view.dialogue.suggestedReplies=suggestions;
+   view.conversation.turns.at(-1).result.suggestedReplies=suggestions;
+  }
+  return view;
+ }
  const {id,status,mode,country,year,createdAt,updatedAt,output,conversationId}=task;
  const conversation=task.conversation?{id:task.conversation.id,country:task.conversation.country,
   year:task.conversation.year,engine:task.conversation.engine,turns:task.conversation.turns.map((turn,i)=>({
-   prompt:turn.prompt,result:publicDialogue(turn.result,{...task.conversation,turns:task.conversation.turns.slice(0,i+1)},catalog)
+   prompt:turn.prompt,result:publicDialogue(turn.result,i===task.conversation.turns.length-1?task.conversation:null,catalog)
   }))}:null;
  const dialogue=publicDialogue(task.dialogue,task.conversation,catalog);
  const progress={queued:'Waiting to start',running:'Preparing your answer',cancelling:'Stopping',cancelled:'Stopped',failed:'SIYA could not complete this request',completed:dialogue?.kind==='clarification'?'Your reply is needed':dialogue?.kind==='unresolved'?'Some evidence is missing':'Answer ready'}[status]||'Working';
@@ -77,13 +86,55 @@ export function dialogueSuggestions(c,catalog=[]){
  if(lab){
   return [{prompt:frontierReasoningExample,mode:'frontier-e0',rewrite:true,newConversation:true}];
  }
+ if(status==='V4_USER_CALCULATION')return [{prompt:'How was that calculated?',mode:'frontier'}];
  if(!subject)return [];
+ const question=(prompt,label)=>({prompt,label,mode:'frontier'});
+ const sourceQuestion=question('sources','What are the sources for this answer?');
+ const showSources=result.references?.length&&query.operation!=='sources'&&!(f.plan||[]).some(p=>p.operation==='sources');
+ const gaps=f.c2_comparison?.gaps?.filter(g=>g.status==='MISSING'&&scoped.includes(g.country)).map(g=>g.country)||[];
+ const retained=f.memory?.last_claim?.reported_countries;
+ const missingCountries=gaps.length?gaps:query.operation==='sources'&&Array.isArray(retained)?scoped.filter(code=>!retained.includes(code)):[];
+ if(missingCountries.length){
+  const questions=result.references?.length&&f.claim?.reported_countries?.length
+   ?[question('sources','Show the sources for the results found')]:[];
+  for(const code of missingCountries){
+   const residence=query.groups?.length===1?{'Rural (%)':'rural','Urban (%)':'urban'}[query.groups[0]]:null;
+   const people=residence&&population?population.replace(' for ',' for '+residence+' '):population;
+   const target=scopeName(code);
+   questions.push(question(`Plan research for missing ${subject} evidence${people} in ${target}${period}.`,
+    `How could we find the missing evidence for ${target}?`));
+  }
+  return questions.slice(0,3);
+ }
+ if(status==='CAUSAL_EVIDENCE_MISSING'&&query.topic==='violence'){
+  const outcome={partner_violence:'intimate partner violence',non_partner_violence:'non-partner sexual violence',perceived_safety:'community safety'}[query.metric]||(!query.metric?'intimate partner violence':null);
+  if(outcome){
+   const descriptive=`${scoped.length===2?'Compare':'Show'} ${outcome}${population} in ${country}${period}.`;
+   return [question(descriptive,`What do the reported ${outcome} figures show?`)];
+  }
+ }
+ if(status==='RESEARCH_PLAN'&&scoped.length===1&&c.country)return [
+  question(`Draft an evidence request for ${subject}${population} in ${country}${period}.`,'Draft a request for the missing evidence')
+ ];
  if(query.related_dimensions?.length===2)return query.operation==='sources'?[]:[{prompt:'sources',label:'Show sources for both measures in '+country,mode:'frontier'}];
  if(status==='COMPARISON_UNRESOLVED')return [{prompt:`Compare ${query.metric||'reading'} between the richest and poorest households in ${country}${period}.`,mode:'frontier',rewrite:true}];
  if(status==='ACTION_NOT_AUTHORISED')return [{prompt:`Draft an evidence request for ${subject} in ${country}${period}.`,mode:'frontier',rewrite:true}];
  if(blocked)return [{prompt:['EVIDENCE_MISSING','POPULATION_MISMATCH','CAUSAL_EVIDENCE_MISSING','COMPARISON_REFERENCE_MISSING'].includes(status)||Boolean(semantic.security_sense&&semantic.security_sense!=='personal safety')?plan:evidence,mode:'frontier',rewrite:true}];
- if(f.claim?.type==='descriptive_comparison')return [{prompt:'sources',label:'What are the sources for this comparison?',mode:'frontier'}];
+ if(f.claim?.type==='descriptive_comparison')return [
+  question('sources','What are the sources for this comparison?'),
+  question('How was that calculated?','How was this gap calculated?'),
+  ...(['reading','numeracy'].includes(query.metric)?[question(`What about ${query.metric==='reading'?'numeracy':'reading'}?`,
+   `Compare ${query.metric==='reading'?'numeracy':'reading'} for the same groups`)]:[])
+ ];
  if(f.claim?.type==='contrast'||status==='DERIVED_DESCRIPTIVE')return [{prompt:'How was that calculated?',mode:'frontier'}];
- if(result.references?.length&&!(f.plan||[]).some(p=>p.operation==='sources'))return [{prompt:'sources',label:'What are the sources for this answer?',mode:'frontier'}];
+ if(showSources){
+  const questions=[sourceQuestion];
+  if(scoped.length===1&&/Ask “next records”/.test(result.message))questions.push(question('next records','What other matching records are available?'));
+  if(scoped.length===1&&['reading','numeracy'].includes(query.metric)&&query.operation==='lookup'){
+   const other=query.metric==='reading'?'numeracy':'reading';
+   questions.push(question(`What about ${other}?`,`What do the records show for ${other}?`));
+  }
+  return questions;
+ }
  return [{prompt:`What evidence is missing for ${subject} in ${country}${period}?`,mode:'frontier'}];
 }

@@ -130,3 +130,86 @@ test('the bridge refuses an answer obligation claiming an unknown source record'
   const r=await runFrontierProcess(request);r.frontier.interpretation.contract.request_structure.answer_requirements=[{id:'R1',kind:'source_periods',source_text:'Include source years',status:'FULFILLED',depends_on:['T1'],evidence_refs:['ev_fabricated']}];return r;
  }}),/invalid whole-request structure/);
 });
+
+test('C2 recovers a reported value past empty rows without crossing the country or population scope',async()=>{
+ const countries=[{iso3:'IND',name:'India'},{iso3:'PAK',name:'Pakistan'}];
+ const headers=['ISO3','Geography','Geographic level','Population','Sex','Survey year','Reading (%)'];
+ const india=['IND','India','national','Children aged 7–14','Girls','2021'];
+ const pakistan=['PAK','Pakistan','national','Children aged 7–14','Girls','2021'];
+ const snapshot={country:{iso3:'IND+PAK',name:'India and Pakistan'},countries,
+  availableCountries:countries,selectedYear:null,sourceTables:{'MICS learning':[
+   headers,['IND','India','national','Children aged 7–14','Boys','2021',99],
+   ...[2017,2018,2019,2020].map(year=>[...india.slice(0,-1),String(year),null]),
+   [...india,0],[...pakistan,25],
+  ]}};
+ const prompt='Compare girls’ reading in India and Pakistan';
+ const state={turns:[],dropped:0};
+ const baseline=await frontierDialogue(snapshot,prompt,state);
+ assert.equal(baseline.kind,'unresolved');
+ assert.equal(baseline.frontier.claim.difference,null);
+ const candidate=await frontierDialogue({...snapshot,c2Comparison:true},prompt,state);
+ assert.equal(candidate.kind,'answer');
+ assert.equal(candidate.frontier.claim.difference,'25');
+ assert.equal(candidate.references.find(r=>r.values[0]==='IND').values.at(-1),0);
+ assert.deepEqual(candidate.frontier.c2_comparison.gaps.map(g=>[g.country,g.status]),[['IND','RECOVERED']]);
+});
+
+test('C2 keeps the reading measure on a residence follow-up and preserves scope limits in sources',async()=>{
+ const s=service();try{
+  const partial=await ask(s,'Compare girls’ reading outcomes in India and Pakistan.');
+  assert.equal(partial.dialogue.frontier.epistemic_status,'PARTIAL_COUNTRY_COVERAGE');
+  assert.deepEqual(partial.dialogue.frontier.claim.reported_countries,['PAK']);
+  assert.equal(partial.dialogue.frontier.claim.difference,null);
+  assert.match(partial.output,/Pakistan \(Sindh\)/);
+  const rural=await ask(s,'What about rural girls?',partial);
+  assert.equal(rural.country,'IND+PAK');
+  assert.equal(rural.dialogue.kind,'unresolved');
+  const frame=rural.dialogue.frontier.interpretation.frames[0];
+  assert.equal(frame.metric,'reading');
+  assert.equal(frame.sex,'female');
+  assert.deepEqual(frame.groups,['Rural (%)']);
+  assert.deepEqual(rural.dialogue.frontier.claim.reported_countries,[]);
+  assert.match(rural.output,/reading \(girls, rural\)/);
+  const sources=await ask(s,'sources',rural);
+  assert.equal(sources.dialogue.kind,'unresolved');
+  assert.match(sources.output,/document coverage limits/);
+  assert.deepEqual(sources.dialogue.references.map(r=>r.id),rural.dialogue.references.map(r=>r.id));
+ }finally{await s.close()}
+});
+
+test('C2 distinguishes an unmeasured explanatory factor from the observed violence outcome',async()=>{
+ const s=service();try{
+  const result=await ask(s,'Does patriarchy explain the violence pattern in Japan and South Korea?');
+  assert.equal(result.dialogue.kind,'unresolved');
+  assert.equal(result.dialogue.frontier.epistemic_status,'CAUSAL_EVIDENCE_MISSING');
+  assert.match(result.output,/no dashboard indicator labelled for patriarchy/);
+  assert.deepEqual(result.dialogue.references,[]);
+  assert.deepEqual(result.dialogue.frontier.c2_comparison.gaps.map(g=>g.status),
+   ['CAUSAL_DESIGN_REQUIRED','CAUSAL_DESIGN_REQUIRED']);
+ }finally{await s.close()}
+});
+
+test('suggested follow-ups distinguish a calculated gap from missing country evidence',async()=>{
+ const s=service();try{
+  const partial=await ask(s,'Compare girls’ reading outcomes in India and Pakistan.');
+  const {dialogue}=await s.present(partial);
+  assert.equal(dialogue.suggestedReplies[0].prompt,'sources');
+  const research=dialogue.suggestedReplies[1].prompt;
+  assert.equal(research,'Plan research for missing reading evidence for girls in India.');
+  const plan=await ask(s,research,partial);
+  assert.equal(plan.dialogue.frontier.epistemic_status,'RESEARCH_PLAN');
+  const view=await s.present(plan);
+  assert.deepEqual(view.conversation.turns[0].result.suggestedReplies,[]);
+  assert.match(view.dialogue.suggestedReplies[0].prompt,/^Draft an evidence request/);
+
+  const compare=await ask(s,'Compare reading between the richest and poorest households in Pakistan.');
+  const questions=(await s.present(compare)).dialogue.suggestedReplies;
+  assert(questions.some(q=>q.prompt==='How was that calculated?'));
+  const related=questions.find(q=>q.prompt==='What about numeracy?');
+  assert(related);
+  const next=await ask(s,related.prompt,compare);
+  assert.equal(next.dialogue.frontier.claim.comparison.subject,'Numeracy');
+  assert.deepEqual(next.dialogue.frontier.claim.comparison.rows.map(r=>r.group),['Poorest households','Richest households']);
+  assert.deepEqual((await s.present(compare,{admin:true})).dialogue.suggestedReplies,questions);
+ }finally{await s.close()}
+});
